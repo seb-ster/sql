@@ -1,23 +1,25 @@
 # An SQL (prepared) statementbuilder
 Eventually this should easily create SQL Injection proof SQL statements
 
-A Statment consists of Clauses.
-A Clause consists of one or a Collection of Elements
-A Collection consists of one or multiple Elements.
-A Collection is itself an Element and can therefor be nested.
-An Element is the basic building block of the SQL string.
+* A Statment consists of Clauses.
+* A Clause consists of one or a Collection of Elements
+* A Collection consists of one or multiple Elements.
+* A Collection is itself an Element and can therefor be nested.
+* An Element is the basic building block of the SQL string.
 
-A Expression is an Element representing a scalar value or NULL.
+* A Expression is an Element representing a scalar value or NULL.
 
-A Identifier is an Element representing a database, a table or a field.
-A Identifier can be qualified using another unqualified identifier.
+* A Identifier is an Element representing a database, a table or a field.
+* A Identifier can be qualified using another unqualified identifier.
 
-A Alias is an Element that assigns a Identifier to an Expression or another Identifier
+* A Alias is an Element that assigns a Identifier to an Expression or another Identifier
 
 All these objects can return a basic SQL string using `getString()` or just casting them to a string.
+
 All these objects can return a PreparedElement using 'prepare()`.
 
 A PreparedElement can also return a string, like every Element. But this string may contain placeholders.
+
 A PreparedElement can return the values corresponding to the placeholders in an array, using 'getParameters()'.
 
 # Version 0.1
