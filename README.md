@@ -36,3 +36,28 @@ with PHPunit 5.7.21 on PHP 5.6.25
 
 # 1 dependency
 on seb-ster/exception, which is used as a marker exception for the seb-ster namespace
+
+# example
+`use SebSter\SQL;`
+
+`$table = new SQL\Element\Identifier('userTable');`
+
+`$two = new SQL\Element\Expression(2);`
+`$five = new SQL\Element\Expression(5);`
+
+`$id = new SQL\Element\Identifier('userId', $table);`
+`$id->greaterThen($five)->orIs($id->lessThen($two));`
+
+`$select = new SQL\Statement\Select();`
+`$select->from($table)->where($id->greaterThen($five)->orIs($id->lessThen($two)));`
+
+`$select->getString()`<br />
+ **SELECT * FROM \`userTable\` WHERE \`userTable\`.\`userId\` > 5 OR \`userTable\`.\`userId\` < 2;**
+
+`$preparedSelect = $select->prepare()`
+
+`$preparedSelect->getString()`<br />
+**SELECT * FROM `userTable` WHERE \`userTable\`.\`userId\` > :0 OR \`userTable\`.\`userId\` < :1;**
+
+`$preparedSelect->getParameters()`<br />
+ **array: [':0'=>5, ':1'=>2]**
