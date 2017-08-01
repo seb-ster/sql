@@ -31,5 +31,6 @@ These comparisons can be called on the basic elements that form the SQL clauses.
 # 100% tested
 with PHPunit 5.7.21 on PHP 5.6.25
 
+
 # 1 dependency
 on seb-ster/exception, which is used as a marker exception for the seb-ster namespace
