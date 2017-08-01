@@ -1,0 +1,19 @@
+{
+    "name": "seb-ster/sql",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "SebSter\\SQL\\": "src/"
+      }
+    },
+    "require-dev": {
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SebSter\\SQL\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "seb-ster/exception": "master-dev"
+    }
+}
